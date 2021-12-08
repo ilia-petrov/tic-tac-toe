@@ -1,4 +1,4 @@
-public class Game {
+public abstract class Game {
     protected int result;
     protected Field field;
 
@@ -20,7 +20,7 @@ public class Game {
     {
         if(field.isWinning() == type)
         {
-            return 1;
+            return 1000;
         }
 
         if(field.isWinning() != type && field.isWinning() != Type.BLANK)
@@ -44,10 +44,10 @@ public class Game {
                 {
                     int next = winningStrategy(field, Type.values()[1 - type.ordinal()]);
                     field.fillCell(i, j, Type.BLANK);
-                    if(next > 0)
+                    if(next >= 1000)
                     {
                         return -1;
-                    }else
+                    }else if(next < 0)
                     {
                         value -= next;
                     }
@@ -59,4 +59,6 @@ public class Game {
 
         return win;
     }
+
+    abstract void play();
 }

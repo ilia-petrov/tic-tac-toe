@@ -9,15 +9,15 @@ public class Main {
                 case 1 ->
                 {
                     game = new PVP();
-                    ((PVP) game).play();
+                    game.play();
                 }
                 case 2 -> {
                     game = new PlayerVsComputerEasy();
-                    ((PlayerVsComputerEasy) game).play();
+                    game.play();
                 }
                 case 3 -> {
                     game = new PlayerVsComputerHard();
-                    ((PlayerVsComputerHard) game).playVsComputerHard();
+                    game.play();
                 }
                 case 4 -> endGame = true;
                 default -> System.out.println("Incorrect mode!");

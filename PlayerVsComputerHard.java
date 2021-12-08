@@ -1,13 +1,11 @@
 public class PlayerVsComputerHard extends Game
 {
-    public void playVsComputerHard()
+    public void play()
     {
         int player = (int)(Math.random() * 2);
 
         while(this.field.isWinning() == Type.BLANK && !this.field.isFilled())
         {
-            System.out.println(field);
-
             if(player % 2 == 0)
             {
                 int newX = 0, newY = 0, maxChances = 0;
@@ -22,7 +20,7 @@ public class PlayerVsComputerHard extends Game
                         }
                         int next = winningStrategy(field, Type.CIRCLE);
                         field.fillCell(i, j, Type.BLANK);
-                        if(next > maxChances)
+                        if(next >= maxChances)
                         {
                             maxChances = next;
                             newX = i;
