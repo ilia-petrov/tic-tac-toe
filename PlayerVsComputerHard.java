@@ -8,28 +8,9 @@ public class PlayerVsComputerHard extends Game
         {
             if(player % 2 == 0)
             {
-                int newX = 0, newY = 0, maxChances = 0;
+                int[] nextMove = winningMove(field, Type.CIRCLE);
 
-                for(int i = 0; i < 3; ++ i)
-                {
-                    for(int j = 0; j < 3; ++ j)
-                    {
-                        if(!field.fillCell(i, j, Type.CIRCLE))
-                        {
-                            continue;
-                        }
-                        int next = winningStrategy(field, Type.CIRCLE);
-                        field.fillCell(i, j, Type.BLANK);
-                        if(next >= maxChances)
-                        {
-                            maxChances = next;
-                            newX = i;
-                            newY = j;
-                        }
-                    }
-                }
-
-                field.fillCell(newX, newY, Type.CIRCLE);
+                field.fillCell(nextMove[0], nextMove[1], Type.CIRCLE);
             } else
             {
                 UI.nextMove(field, Type.CROSS);

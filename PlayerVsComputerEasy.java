@@ -8,12 +8,7 @@ public class PlayerVsComputerEasy extends Game
         {
             if(player % 2 == 0)
             {
-                int newX, newY;
-                do
-                {
-                    newX = (int)(Math.random() * 3);
-                    newY = (int)(Math.random() * 3);
-                } while (!this.field.fillCell(newX, newY, Type.CIRCLE));
+                randomMove(field, Type.CIRCLE);
             } else
             {
                 UI.nextMove(field, Type.CROSS);
