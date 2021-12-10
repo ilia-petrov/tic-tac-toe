@@ -19,7 +19,11 @@ public class Main {
                     game = new PlayerVsComputerHard();
                     game.play();
                 }
-                case 4 -> endGame = true;
+                case 4 -> {
+                	game = new PlayerVsComputerCustomDifficulty();
+                	game.play();
+                }
+                case 5 -> endGame = true;
                 default -> System.out.println("Incorrect mode!");
             }
         }

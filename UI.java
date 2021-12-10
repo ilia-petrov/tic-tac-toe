@@ -54,8 +54,18 @@ public class UI
         System.out.println("For player, enter 1");
         System.out.println("For easy computer, enter 2");
         System.out.println("For hard computer, enter 3");
-        System.out.println("To end the game, enter 4");
-
+        System.out.println("For custom difficulty, enter 4");
+        System.out.println("To end the game, enter 5");
+        
         return Integer.parseInt(scanner.nextLine());
+    }
+    public static int selectDifficulty() {
+    	Scanner scanner = new Scanner(System.in);
+    	int difficulty;
+    	do {
+	    	System.out.println("Select a difficulty from 0 to 10: ");
+	    	difficulty = scanner.nextInt();
+    	} while(difficulty<0||difficulty>10);
+    	return difficulty;
     }
 }
